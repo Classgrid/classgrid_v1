@@ -354,7 +354,7 @@ function initUploadForm() {
                 const { data: { publicUrl } } = supabase.storage.from('notes-files').getPublicUrl(filePath);
 
                 // Insert
-                const { error: dbError } = await supabase.from('materials').insert([{
+                const { error: dbError } = await supabase.from('v1notes').insert([{
                     title,
                     subject_slug: subject,
                     file_url: publicUrl,

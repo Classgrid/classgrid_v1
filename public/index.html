@@ -3287,7 +3287,25 @@
         }
 
         function initializePreloader() {
-            if (!document.getElementById('preloader')) return;
+            const preloader = document.getElementById('preloader');
+            if (!preloader) return;
+
+            // Check local storage for the last time the animation was shown
+            const lastAnimationTime = localStorage.getItem('lastAnimationTime');
+            const now = Date.now();
+            const fortyMinutes = 40 * 60 * 1000;
+
+            if (lastAnimationTime && (now - parseInt(lastAnimationTime, 10)) < fortyMinutes) {
+                // If it's been less than 40 minutes, hide preloader immediately and skip animation
+                preloader.style.display = 'none';
+                preloader.classList.add('hidden');
+                document.body.classList.remove('preloading');
+                return;
+            }
+
+            // Otherwise, set the current time in local storage and play animation
+            localStorage.setItem('lastAnimationTime', now.toString());
+
             resize();
             cancelAnimationFrame(animId);
             startMs = null;

@@ -8,7 +8,7 @@ dotenv.config();
 const recreateUser = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
-        const email = 'amol.kharche@quantumchem.site';
+        const email = 'amol.kharche@classgrid.site';
 
         await User.deleteOne({ email });
         console.log('✅ Deleted existing user');

@@ -54,8 +54,8 @@
             cursor: none;
         }
 
-        /* Quantum Loader */
-        .quantum-loader {
+        /* Classgrid Loader */
+        .classgrid-loader {
             position: fixed;
             top: 0;
             left: 0;
@@ -167,7 +167,7 @@
         }
 
         /* Main Container */
-        .quantum-container {
+        .classgrid-container {
             opacity: 0;
             min-height: 100vh;
             position: relative;
@@ -185,7 +185,7 @@
         }
 
         /* Header */
-        .quantum-header {
+        .classgrid-header {
             padding: 8rem 2rem 6rem;
             text-align: center;
             position: relative;
@@ -425,7 +425,7 @@
         }
 
         /* Enhanced Footer */
-        .quantum-footer {
+        .classgrid-footer {
             padding: 4rem 2rem;
             text-align: center;
             border-top: 1px solid var(--glass-border);
@@ -586,6 +586,10 @@
             }
         }
     </style>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
 
 <body>
@@ -593,12 +597,12 @@
     <div class="cursor"></div>
     <div class="cursor-ring"></div>
 
-    <!-- Quantum Loader -->
-    <div class="quantum-loader" id="quantumLoader">
+    <!-- Classgrid Loader -->
+    <div class="classgrid-loader" id="classgridLoader">
         <div class="loader-grid"></div>
         <div class="loader-content">
             <div class="loader-logo">
-                <img src="/Classgrid.png" alt="Classgrid Logo">
+                <img src="/logo.png" alt="Classgrid Logo">
             </div>
             <div class="loader-text">CLASSGRID</div>
             <div class="loader-number" id="loaderNumber">10</div>
@@ -613,14 +617,14 @@
     <div class="floating-particles" id="floatingParticles"></div>
 
     <!-- Main Container -->
-    <div class="quantum-container" id="quantumContainer">
+    <div class="classgrid-container" id="classgridContainer">
         <!-- Header -->
-        <header class="quantum-header">
+        <header class="classgrid-header">
             <div class="header-logo">
                 <div class="logo-circle"></div>
                 <div class="logo-circle"></div>
                 <div class="logo-circle"></div>
-                <img src="/Classgrid.png" alt="Classgrid Logo">
+                <img src="/logo.png" alt="Classgrid Logo">
             </div>
 
             <h1 class="header-title" id="headerTitle">OUR TEAM</h1>
@@ -658,10 +662,10 @@
         </div>
 
         <!-- Enhanced Footer -->
-        <footer class="quantum-footer">
+        <footer class="classgrid-footer">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="/Classgrid.png" alt="Classgrid Logo">
+                    <img src="/logo.png" alt="Classgrid Logo">
                 </div>
 
                 <nav class="footer-nav">
@@ -694,11 +698,11 @@
         let isMobile = window.innerWidth <= 768;
         let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Quantum Loader Animation
+        // Classgrid Loader Animation
         function initLoader() {
-            const loader = document.getElementById('quantumLoader');
+            const loader = document.getElementById('classgridLoader');
             const loaderNumber = document.getElementById('loaderNumber');
-            const mainContainer = document.getElementById('quantumContainer');
+            const mainContainer = document.getElementById('classgridContainer');
 
             // Animate loader text
             gsap.to('.loader-text', {
@@ -854,7 +858,7 @@
 
         // Initialize main content
         function initMainContent() {
-            const container = document.getElementById('quantumContainer');
+            const container = document.getElementById('classgridContainer');
 
             // Show main container
             gsap.to(container, {

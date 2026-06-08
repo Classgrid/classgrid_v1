@@ -1,4 +1,4 @@
-# QuantumChem Scalable Platform — Implementation Plan
+# Classgrid Scalable Platform — Implementation Plan
 
 ## Architecture Overview
 

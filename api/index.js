@@ -35,8 +35,8 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://127.0.0.1:3000",
-      "https://www.quantumchem.site",
-      "https://quantumchem.site",
+      "https://www.classgrid.site",
+      "https://classgrid.site",
       "https://v1.classgrid.in",
       "https://www.classgrid.in"
     ],

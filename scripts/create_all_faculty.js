@@ -9,25 +9,25 @@ const facultyList = [
 
     {
         name: 'Prof (Faculty)',
-        email: 'physics@classgrid.site',
+        email: 'support@classgrid.in',
         subject: 'physics',
         password: 'Classgrid@5049'
     },
     {
         name: 'Prof. Math Faculty',
-        email: 'math@classgrid.site',
+        email: 'support@classgrid.in',
         subject: 'mathematics',
         password: 'Classgrid@5049'
     },
     {
         name: 'Prof. CPP Faculty',
-        email: 'cpp@classgrid.site',
+        email: 'support@classgrid.in',
         subject: 'cpp',
         password: 'Classgrid@5049'
     },
     {
         name: 'Prof. Amol Kharche',
-        email: 'amol.kharche@classgrid.site',
+        email: 'support@classgrid.in',
         subject: 'chemistry',
         password: 'pass@123'
     }

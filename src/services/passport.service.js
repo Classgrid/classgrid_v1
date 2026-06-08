@@ -132,7 +132,7 @@ const passportConfig = () => {
                             // sanitize name: "John Doe" -> "john_doe"
                             const sanitizedName = (profile.displayName || "user").toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
                             const randomSuffix = Math.floor(1000 + Math.random() * 9000); // 4 digit random number
-                            email = `facebook_${sanitizedName}_${randomSuffix}@classgrid.site`;
+                            email = `facebook_${sanitizedName}_${randomSuffix}@classgrid.in`;
                             console.log(`⚠️ Facebook email missing. Using generated email: ${email}`);
                         }
 

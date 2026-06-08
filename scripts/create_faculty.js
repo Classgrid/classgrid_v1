@@ -11,7 +11,7 @@ const createFaculty = async () => {
         await mongoose.connect(process.env.MONGO_URI);
         console.log('Connected to MongoDB');
 
-        const email = 'chemistry@classgrid.site';
+        const email = 'support@classgrid.in';
         const password = 'Classgrid@5049';
         const hashedPassword = await bcrypt.hash(password, 12);
         const name = 'Prof (Faculty)';

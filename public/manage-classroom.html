@@ -1956,8 +1956,8 @@
                 const d = await r.json();
                 me = d.user || d;
                 localStorage.setItem('user', JSON.stringify(me));
-                const ALLOWED = ['physics@classgrid.site', 'math@classgrid.site', 'cpp@classgrid.site'];
-                if (!ALLOWED.includes(me.email) && !me.email.endsWith('@classgrid.site')) { location.href = '/classroom.html'; return; }
+                const ALLOWED = ['support@classgrid.in', 'support@classgrid.in', 'support@classgrid.in'];
+                if (!ALLOWED.includes(me.email) && !me.email.endsWith('@classgrid.in')) { location.href = '/classroom.html'; return; }
                 const ini = (me.name && me.name[0]) ? me.name[0].toUpperCase() : '?';
                 set('navAv', ini); set('navName', me.name); set('navMenuName', me.name);
                 set('sName', me.name); set('sEmail', me.email);

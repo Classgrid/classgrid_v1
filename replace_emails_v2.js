@@ -20,20 +20,20 @@ function walkDir(dir, callback) {
 
 const replacements = [
     // Clean up messy duplicates created from previous replacements
-    { regex: /support@classgrid\.in or support@classgrid\.in/gi, replacement: 'support@classgird.in' },
-    { regex: /support@classgrid\.in\s+or\s+support@classgrid\.in/gi, replacement: 'support@classgird.in' },
-    { regex: /support@classgrid\.in,support@classgrid\.in/gi, replacement: 'support@classgird.in' },
-    { regex: /mailto:support@classgrid\.in,support@classgrid\.in/gi, replacement: 'mailto:support@classgird.in' },
+    { regex: /support@classgrid\.in or support@classgrid\.in/gi, replacement: 'support@classgrid.in' },
+    { regex: /support@classgrid\.in\s+or\s+support@classgrid\.in/gi, replacement: 'support@classgrid.in' },
+    { regex: /support@classgrid\.in,support@classgrid\.in/gi, replacement: 'support@classgrid.in' },
+    { regex: /mailto:support@classgrid\.in,support@classgrid\.in/gi, replacement: 'mailto:support@classgrid.in' },
     
     // Catch-all to change any remaining correct spelling or previous substitutions to the requested typo
-    { regex: /support@classgrid\.in/gi, replacement: 'support@classgird.in' },
+    { regex: /support@classgrid\.in/gi, replacement: 'support@classgrid.in' },
     
-    // Also clean up any lingering classgrid25 or support@classgrid.site just in case
-    { regex: /classgrid25@gmail\.com or support@classgrid\.site/gi, replacement: 'support@classgird.in' },
-    { regex: /classgrid25@gmail\.com,support@classgrid\.site/gi, replacement: 'support@classgird.in' },
-    { regex: /classgrid25@gmail\.com/gi, replacement: 'support@classgird.in' },
-    { regex: /support@classgrid\.site/gi, replacement: 'support@classgird.in' },
-    { regex: /academic@classgrid\.site/gi, replacement: 'support@classgird.in' }
+    // Also clean up any lingering classgrid25 or support@classgrid.in just in case
+    { regex: /classgrid25@gmail\.com or support@classgrid\.site/gi, replacement: 'support@classgrid.in' },
+    { regex: /classgrid25@gmail\.com,support@classgrid\.site/gi, replacement: 'support@classgrid.in' },
+    { regex: /classgrid25@gmail\.com/gi, replacement: 'support@classgrid.in' },
+    { regex: /support@classgrid\.site/gi, replacement: 'support@classgrid.in' },
+    { regex: /academic@classgrid\.site/gi, replacement: 'support@classgrid.in' }
 ];
 
 walkDir(__dirname, function(filePath) {
@@ -54,7 +54,7 @@ walkDir(__dirname, function(filePath) {
 
         if (content !== originalContent) {
             fs.writeFileSync(filePath, content, 'utf8');
-            console.log(`Updated to support@classgird.in in ${filePath}`);
+            console.log(`Updated to support@classgrid.in in ${filePath}`);
         }
     } catch (e) {}
 });
@@ -64,7 +64,7 @@ try {
     const envPath = path.join(__dirname, '.env');
     if (fs.existsSync(envPath)) {
         let envContent = fs.readFileSync(envPath, 'utf8');
-        let newEnvContent = envContent.replace(/support@classgrid\.in/g, 'support@classgird.in');
+        let newEnvContent = envContent.replace(/support@classgrid\.in/g, 'support@classgrid.in');
         if (newEnvContent !== envContent) {
             fs.writeFileSync(envPath, newEnvContent, 'utf8');
             console.log(`Updated .env`);

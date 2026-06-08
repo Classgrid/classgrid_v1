@@ -1545,7 +1545,7 @@
         function openEmail() {
             const subject = encodeURIComponent('Inquiry from Classgrid Website');
             const body = encodeURIComponent('Hello Classgrid Team,\n\nI would like to inquire about:\n\n[Please describe your inquiry here]\n\nBest regards,\n[Your Name]');
-            window.location.href = `mailto:classgrid25@gmail.com,support@classgrid.site?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:support@classgrid.in?subject=${subject}&body=${body}`;
         }
 
         // Contact Form
@@ -1615,7 +1615,7 @@
                     } else if (confirm('Or would you prefer to send via Email?')) {
                         const emailSubject = encodeURIComponent(`${formData.subject} - From ${formData.name}`);
                         const emailBody = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-                        window.location.href = `mailto:classgrid25@gmail.com,support@classgrid.site?subject=${emailSubject}&body=${emailBody}`;
+                        window.location.href = `mailto:support@classgrid.in?subject=${emailSubject}&body=${emailBody}`;
                     }
                 }, 500);
 
@@ -1720,7 +1720,7 @@
                 const fallbackResponses = {
                     'hello': "Hello! I'm your AI Classgrid assistant. How can I help you today?",
                     'hi': "Hi there! I'm here to help with Classroom queries and research information.",
-                    'contact': "📞 Contact: Email: classgrid25@gmail.com or support@classgrid.site | Phone: +91 81492 77038 | WhatsApp: +91 81492 77038",
+                    'contact': "📞 Contact: Email: support@classgrid.in | Phone: +91 81492 77038 | WhatsApp: +91 81492 77038",
                     'hours': "🕒 Office Hours:\n• Monday - Friday: 9:00 AM - 6:00 PM IST\n• Saturday: 10:00 AM - 2:00 PM IST\n• Sunday: Closed",
                     'database': "🔬 Classroom Access:\n1. Free Access for all users\n2. Registered Users get full access\n3. API Access available\n4. We welcome contributions!",
                     'help': "❓ I can help with:\n• Chemical compound information\n• Database queries\n• Research collaboration\n• Technical support\n• Contact information",

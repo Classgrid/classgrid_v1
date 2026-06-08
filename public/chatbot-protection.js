@@ -16,7 +16,7 @@ const ChatbotProtection = (() => {
 
         contact: `📧 **Contact Information**
 
-**Email:** classgrid25@gmail.com or support@classgrid.site
+**Email:** support@classgrid.in
 **Phone:** +91 81492 77038
 **Location:** PCCOE, Pune
 
@@ -30,7 +30,7 @@ Monday - Friday: 9:00 AM - 6:00 PM IST
 Saturday: 10:00 AM - 4:00 PM IST
 Sunday: Closed
 
-📧 Email us anytime at classgrid25@gmail.com or support@classgrid.site`,
+📧 Email us anytime at support@classgrid.in`,
 
         database: `🔬 **Chemical Database**
 
@@ -212,7 +212,7 @@ For advanced AI-powered chemistry assistance, please login to unlock:
             console.error("Chat error:", error);
             removeTypingIndicator();
             
-            addMessage("I'm having trouble connecting to the server right now. Please try again later or contact classgrid25@gmail.com or support@classgrid.site for assistance.", 'bot');
+            addMessage("I'm having trouble connecting to the server right now. Please try again later or contact support@classgrid.in for assistance.", 'bot');
         }
     }
 

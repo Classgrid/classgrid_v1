@@ -10,10 +10,7 @@
  */
 
 const getFrontendUrl = () => {
-  if (process.env.VERCEL) {
-    return process.env.FRONTEND_URL_PROD || "https://www.classgrid.site";
-  }
-  return process.env.FRONTEND_URL || "http://localhost:3000";
+  return process.env.FRONTEND_URL || "https://v1.classgrid.in";
 };
 
 const PLATFORM_LOGO_URL = `${getFrontendUrl()}/logo.png`;
@@ -217,11 +214,11 @@ const baseTemplate = (content, headerGradient = "linear-gradient(135deg, #2563eb
               <span style="color: #d1d5db;">•</span>
               <a href="${FRONTEND_URL}/classroom" class="footer-link">Dashboard</a>
               <span style="color: #d1d5db;">•</span>
-              <a href="mailto:classgrid25@gmail.com,support@classgrid.site" class="footer-link">Support</a>
+              <a href="mailto:support@classgrid.in" class="footer-link">Support</a>
             </div>
             <p class="footer-text" style="margin-top: 18px;">
               Need help? Contact us at
-              <a href="mailto:classgrid25@gmail.com,support@classgrid.site" style="color: #2563eb; text-decoration: none; font-weight: 500;">classgrid25@gmail.com or support@classgrid.site</a>
+              <a href="mailto:support@classgrid.in" style="color: #2563eb; text-decoration: none; font-weight: 500;">support@classgrid.in</a>
             </p>
           </div>
         </div>
@@ -343,7 +340,7 @@ export const getWelcomeEmailHtml = (user, provider = "manual") => {
         </p>
         <p style="margin: 10px 0 0 0; color: #92400e; font-size: 14px; line-height: 1.7;">
           If you didn't create this account, please contact our support team immediately at
-          <a href="mailto:classgrid25@gmail.com,support@classgrid.site" style="color: #92400e; font-weight: 600; text-decoration: underline;">classgrid25@gmail.com or support@classgrid.site</a>
+          <a href="mailto:support@classgrid.in" style="color: #92400e; font-weight: 600; text-decoration: underline;">support@classgrid.in</a>
         </p>
       </div>
 
@@ -424,7 +421,7 @@ export const getLoginNotificationHtml = (user, provider = "manual") => {
           ${securityAction}
           <strong>2.</strong> Review your recent account activity<br>
           <strong>3.</strong> Contact our support team: 
-          <a href="mailto:classgrid25@gmail.com,support@classgrid.site" style="color: #92400e; font-weight: 600; text-decoration: underline;">classgrid25@gmail.com or support@classgrid.site</a>
+          <a href="mailto:support@classgrid.in" style="color: #92400e; font-weight: 600; text-decoration: underline;">support@classgrid.in</a>
         </div>
       </div>
 
@@ -544,7 +541,7 @@ PLATFORM FEATURES:
 ✓ AI-powered intelligent learning assistant
 
 SECURITY NOTICE:
-If you didn't create this account, contact us at classgrid25@gmail.com or support@classgrid.site
+If you didn't create this account, contact us at support@classgrid.in
 
 Welcome aboard!
 Classgrid Team`;
@@ -568,7 +565,7 @@ DIDN'T SIGN IN?
 If you didn't perform this login, please take immediate action:
 1. ${config.securityLink ? `Secure your account at ${config.securityLink}` : `Reset your password at ${getFrontendUrl()}/reset-password`}
 2. Review your recent account activity
-3. Contact support at classgrid25@gmail.com or support@classgrid.site
+3. Contact support at support@classgrid.in
 
 Access your dashboard: ${getFrontendUrl()}/classroom
 

@@ -52,7 +52,7 @@ Faculty members access a centralized Management Hub where they can create and ma
 CONTACT & SUPPORT DETAILS
 ━━━━━━━━━━━━━━━━━━━━━━
 If a student or faculty asks for support or contact details when needed, provide this information:
-- Emails: classgrid25@gmail.com, support@classgrid.site
+- Emails: support@classgrid.in, support@classgrid.in
 - Phone/WhatsApp: +91 81492 77038
 - Address: Pimpri Chinchwad College of Engineering, Sector 26, Pradhikaran, Nigdi, Pune, Maharashtra 411044, India
 - Working Hours:
@@ -218,7 +218,7 @@ export async function getChatReply(message, modelArg = 'groq') {
 To proceed, please try one of these alternatives:
 
 1. **Switch to another AI model in the top right menu**
-2. **Email us**: classgrid25@gmail.com or support@classgrid.site
+2. **Email us**: support@classgrid.in
 3. **WhatsApp**: +91 81492 77038 (text messages only)`;
   }
 }

@@ -55,7 +55,7 @@
         }
 
         if (profileEmail) {
-            profileEmail.textContent = userData.email || 'classgrid25@gmail.com or support@classgrid.site';
+            profileEmail.textContent = userData.email || 'support@classgrid.in';
         }
 
         if (profileAvatar) {

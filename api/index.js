@@ -24,7 +24,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 /* ---------- DB ---------- */
-connectDB();
+// Don't block app startup — connect in background
+let dbReady = false;
+(async () => {
+  const conn = await connectDB();
+  if (conn) dbReady = true;
+})();
 
 /* ---------- CONFIG ---------- */
 passportConfig(); // Initialize passport strategies
@@ -56,7 +61,27 @@ app.use((req, res, next) => {
 });
 
 /* ---------- STATIC FILES ---------- */
+// Serve static files FIRST — these don't need MongoDB
 app.use(express.static(path.join(__dirname, "../public")));
+
+/* ---------- DB GUARD FOR API ROUTES ---------- */
+// Ensure MongoDB is connected before hitting any API route
+app.use("/api", async (req, res, next) => {
+  if (req.path === "/health") return next(); // health check always works
+  
+  const mongoose = (await import("mongoose")).default;
+  if (mongoose.connection.readyState !== 1) {
+    // Try to reconnect
+    const conn = await connectDB();
+    if (!conn) {
+      return res.status(503).json({ 
+        error: "Database temporarily unavailable. Please retry in a few seconds." 
+      });
+    }
+    dbReady = true;
+  }
+  next();
+});
 
 /* ---------- API ROUTES ---------- */
 app.use("/api/auth", authRoutes);

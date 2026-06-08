@@ -564,6 +564,49 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+    /* ====== GLOBAL LOGO FIX: NO CIRCLES, NO ANIMATION ====== */
+    .logo img,
+    .logo-container,
+    .logo-container img,
+    .logo-img,
+    .nav-logo,
+    .nav-brand img,
+    .welcome-logo,
+    .welcome-logo img,
+    .footer-logo-img,
+    [class*="logo"] img,
+    .header-left img,
+    .f-logo,
+    .f-logo img {
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        overflow: visible !important;
+        object-fit: contain !important;
+        background: transparent !important;
+    }
+    .logo-container:hover,
+    .logo-container:active,
+    .logo-container:hover img,
+    .nav-logo:hover,
+    .nav-brand:hover .logo-container,
+    .nav-brand:hover .nav-logo,
+    .nav-brand:hover img,
+    .welcome-logo:hover,
+    .logo:hover img,
+    [class*="logo"]:hover img {
+        transform: none !important;
+        animation: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    @keyframes rotateLogo { 0%, 100% { transform: none; } }
+    /* ====== END GLOBAL LOGO FIX ====== */
+</style>
 </head>
 
 <body>

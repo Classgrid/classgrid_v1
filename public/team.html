@@ -51,7 +51,6 @@
             color: var(--text-primary);
             font-family: 'Space Grotesk', sans-serif;
             overflow-x: hidden;
-            cursor: none;
         }
 
         /* Classgrid Loader */
@@ -141,30 +140,7 @@
             letter-spacing: 3px;
         }
 
-        /* Custom Cursor */
-        .cursor {
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-            pointer-events: none;
-            z-index: 10000;
-            mix-blend-mode: difference;
-            transition: transform 0.1s;
-        }
 
-        .cursor-ring {
-            position: fixed;
-            width: 32px;
-            height: 32px;
-            border: 2px solid var(--accent-blue);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: all 0.2s;
-        }
 
         /* Main Container */
         .classgrid-container {
@@ -636,9 +612,7 @@
 </head>
 
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-ring"></div>
+
 
     <!-- Classgrid Loader -->
     <div class="classgrid-loader" id="classgridLoader">
@@ -1036,51 +1010,11 @@
 
         // Initialize custom cursor
         function initCursor() {
-            const cursor = document.querySelector('.cursor');
-            const cursorRing = document.querySelector('.cursor-ring');
-
-            // Track mouse position
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-
-            // Smooth cursor animation
-            function updateCursor() {
-                cursorX += (mouseX - cursorX) * 0.15;
-                cursorY += (mouseY - cursorY) * 0.15;
-
-                cursorRingX += (mouseX - cursorRingX) * 0.05;
-                cursorRingY += (mouseY - cursorRingY) * 0.05;
-
-                cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
-                cursorRing.style.transform = `translate(${cursorRingX}px, ${cursorRingY}px)`;
-
-                requestAnimationFrame(updateCursor);
-            }
-
-            updateCursor();
-
-            // Cursor hover effects
-            const hoverElements = document.querySelectorAll('.member-card, .back-link, .footer-nav-link');
+            // Cursor hover effects (kept for card animations)
+            const hoverElements = document.querySelectorAll('.member-card');
 
             hoverElements.forEach(element => {
                 element.addEventListener('mouseenter', () => {
-                    gsap.to(cursor, {
-                        scale: 2,
-                        backgroundColor: '#ff00ff',
-                        duration: 0.2,
-                        ease: "power2.out"
-                    });
-
-                    gsap.to(cursorRing, {
-                        scale: 1.8,
-                        borderColor: '#ff00ff',
-                        borderWidth: '1px',
-                        duration: 0.2,
-                        ease: "power2.out"
-                    });
-
                     // Element specific effects
                     if (element.classList.contains('member-card')) {
                         gsap.to(element.querySelector('.card-inner'), {
@@ -1101,21 +1035,6 @@
                 });
 
                 element.addEventListener('mouseleave', () => {
-                    gsap.to(cursor, {
-                        scale: 1,
-                        backgroundColor: '#00f3ff',
-                        duration: 0.2,
-                        ease: "power2.out"
-                    });
-
-                    gsap.to(cursorRing, {
-                        scale: 1,
-                        borderColor: '#00f3ff',
-                        borderWidth: '2px',
-                        duration: 0.2,
-                        ease: "power2.out"
-                    });
-
                     // Reset element effects
                     if (element.classList.contains('member-card')) {
                         gsap.to(element.querySelector('.card-inner'), {
